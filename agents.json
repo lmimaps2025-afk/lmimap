@@ -91,6 +91,15 @@
       "photo": "pam-mccolly.jpg"
     },
     {
+      "id": "patrick-sieng",
+      "name": "Patrick Sieng",
+      "title": "Principal Broker",
+      "company": "Capitol Real Estate",
+      "phone": "503-799-8280",
+      "email": "patrick@patricksieng.com",
+      "photo": "patrick-sieng.jpg"
+    },
+    {
       "id": "quintin-bangert",
       "name": "Quintin Bangert",
       "title": "Broker, SRS PSA",
