@@ -74,10 +74,16 @@ select option{background:#1c1c1c;color:#f0f0f0}
 .ac-item:last-child{border-bottom:none}
 /* Print */
 @media print{
+  @page{size:letter portrait;margin:0}
   #form-panel,.preview-label,#settings-modal,#add-agent-modal{display:none!important}
-  html,body{overflow:visible;height:auto;background:white}
-  #preview-panel{padding:0!important;background:white!important;display:block}
-  .flyer-root{width:100%!important;box-shadow:none!important}
+  html,body{margin:0;padding:0;height:100%;background:white}
+  #preview-panel{padding:0!important;background:white!important;display:flex;align-items:stretch;min-height:100vh}
+  .flyer-root{
+    width:100%!important;box-shadow:none!important;
+    display:flex!important;flex-direction:column!important;
+    min-height:100vh!important
+  }
+  .flyer-table-wrap{flex:1!important}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
@@ -219,10 +225,13 @@ select option{background:#1c1c1c;color:#f0f0f0}
     </div>
     <button class="btn-ghost" onclick="openAddAgent()" style="width:100%;margin-bottom:10px;font-size:12px">+ Add New Agent</button>
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
       <label class="agent-photo-circle" title="Upload headshot override">
         <span style="font-size:10px;color:#444;text-align:center">Photo</span>
-        <input type="file" accept="image/*" style="display:none" onchange="handleAgentPhoto(this)">
+        <input type="file" accept="image/*" id="agent-photo-input" style="display:none" onchange="handleAgentPhoto(this)">
       </label>
+      <span id="photo-override-indicator" style="font-size:10px;color:#4ade80"></span>
+      </div>
       <div style="font-size:10px;color:#555;line-height:1.6">Upload headshot<br>override (optional)</div>
     </div>
   </div>
@@ -543,11 +552,31 @@ function handlePhoto(idx, input) {
   reader.readAsDataURL(file);
 }
 
-function handleAgentPhoto(input) {
+async function handleAgentPhoto(input) {
   var file = input.files && input.files[0];
   if (!file) return;
   var reader = new FileReader();
-  reader.onload = function(e) { S.photoOverride = e.target.result; renderFlyer(); };
+  reader.onload = async function(e) {
+    S.photoOverride = e.target.result;
+    renderFlyer();
+    // Update indicator
+    var ind = document.getElementById('photo-override-indicator');
+    if (ind) ind.textContent = 'Photo updated ✓';
+    // Save permanently to GitHub if PAT is set
+    var pat = getPAT();
+    if (pat) {
+      var agent = S.agents[S.agentIdx];
+      if (agent) {
+        var photoName = agent.id + '.jpg';
+        var base64 = e.target.result.split(',')[1];
+        var existing = await ghGet('photos/' + photoName);
+        var ok = await ghPut('photos/' + photoName, base64, existing && existing.sha, 'Update photo: ' + photoName, true);
+        if (ind) ind.textContent = ok ? 'Photo saved to GitHub ✓' : 'Photo updated (session only)';
+      }
+    } else {
+      if (ind) ind.textContent = 'Photo updated (session only — set PAT to save permanently)';
+    }
+  };
   reader.readAsDataURL(file);
 }
 
@@ -564,6 +593,8 @@ function updatePhotoSlot(idx, src) {
 function selectAgent(idx) {
   S.agentIdx = parseInt(idx);
   S.photoOverride = null;
+  var ind = document.getElementById('photo-override-indicator');
+  if (ind) ind.textContent = '';
   renderFlyer();
 }
 
