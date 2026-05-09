@@ -1,0 +1,139 @@
+{
+  "agents": [
+    {
+      "id": "bob-riggi",
+      "name": "Bob Riggi",
+      "title": "Broker",
+      "company": "Windermere Pacific West Properties",
+      "phone": "(503) 391-1350",
+      "email": "bobriggi@gmail.com",
+      "photo": "bob-riggi.jpg"
+    },
+    {
+      "id": "david-bradley",
+      "name": "David Bradley",
+      "title": "Agent",
+      "company": "Windermere Pacific West Properties",
+      "phone": "(503) 508-9111",
+      "email": "",
+      "photo": "david-bradley.jpg"
+    },
+    {
+      "id": "dennis-courtright",
+      "name": "Dennis Courtright",
+      "title": "Agent, ePro PSA",
+      "company": "Windermere Pacific West Properties",
+      "phone": "(971) 719-9902",
+      "email": "dcourtright@windermere.com",
+      "photo": "dennis-courtright.jpg"
+    },
+    {
+      "id": "kay-johnson",
+      "name": "Kay Johnson",
+      "title": "Broker",
+      "company": "Windermere Pacific West Properties",
+      "phone": "(503) 383-8333",
+      "email": "",
+      "photo": "kay-johnson.jpg"
+    },
+    {
+      "id": "kendel-white",
+      "name": "Kendel White",
+      "title": "Agent",
+      "company": "Premiere Property Group LLC",
+      "phone": "503-380-8284",
+      "email": "Homesbykendel@gmail.com",
+      "photo": "kendel-white.jpg"
+    },
+    {
+      "id": "kristina-mccolly",
+      "name": "Kristina McColly",
+      "title": "Broker",
+      "company": "Windermere Pacific West Properties",
+      "phone": "(503) 851-2088",
+      "email": "kmccolly@windermere.com",
+      "photo": "kristina-mccolly.jpg"
+    },
+    {
+      "id": "larry-miles",
+      "name": "Larry Miles",
+      "title": "Broker",
+      "company": "Windermere Pacific West Properties",
+      "phone": "(503) 580-5927",
+      "email": "",
+      "photo": "larry-miles.jpg"
+    },
+    {
+      "id": "onna-mccolly",
+      "name": "Onna McColly",
+      "title": "Owner | Broker",
+      "company": "Windermere Pacific West Properties",
+      "phone": "(503) 931-5716",
+      "email": "onnamccolly@windermere.com",
+      "photo": "onna-mccolly.jpg"
+    },
+    {
+      "id": "pam-mccolly",
+      "name": "Pam McColly",
+      "title": "Owner | Principal Broker",
+      "company": "Windermere Pacific West Properties",
+      "phone": "(503) 871-0714",
+      "email": "mccolly@windermere.com",
+      "photo": "pam-mccolly.jpg"
+    },
+    {
+      "id": "quintin-bangert",
+      "name": "Quintin Bangert",
+      "title": "Broker, SRS PSA",
+      "company": "Windermere Pacific West Properties",
+      "phone": "(503) 931-2445",
+      "email": "qbangert@windermere.com",
+      "photo": "quintin-bangert.jpg"
+    },
+    {
+      "id": "ryan-welty",
+      "name": "Ryan Welty",
+      "title": "Agent",
+      "company": "Windermere Pacific West Properties",
+      "phone": "(971) 398-7093",
+      "email": "ryanwelty@windermere.com",
+      "photo": "ryan-welty.jpg"
+    },
+    {
+      "id": "sally-huggins",
+      "name": "Sally Huggins",
+      "title": "Broker",
+      "company": "Windermere Pacific West Properties",
+      "phone": "(503) 510-8274",
+      "email": "sallyhomestar@gmail.com",
+      "photo": "sally-huggins.jpg"
+    },
+    {
+      "id": "sandra-paoli",
+      "name": "Sandra Paoli",
+      "title": "Broker - Realtor",
+      "company": "Windermere Pacific West Properties",
+      "phone": "(503) 580-0160",
+      "email": "SPaoliProperties@gmail.com",
+      "photo": "sandra-paoli.jpg"
+    },
+    {
+      "id": "sarah-freitag",
+      "name": "Sarah Freitag",
+      "title": "Principal Broker | Equestrian Advisor",
+      "company": "Windermere Pacific West Properties",
+      "phone": "(503) 551-3875",
+      "email": "sarahf@windermere.com",
+      "photo": "sarah-freitag.jpg"
+    },
+    {
+      "id": "virginia-king",
+      "name": "Virginia King",
+      "title": "Agent",
+      "company": "Windermere Pacific West Properties",
+      "phone": "",
+      "email": "",
+      "photo": "virginia-king.jpg"
+    }
+  ]
+}
